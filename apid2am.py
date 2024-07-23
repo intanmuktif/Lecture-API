@@ -23,7 +23,6 @@ app = FastAPI()
 # @app.get("/surveys")
 
 # endpoint get all data from df
-
 @app.get("/data/{loc}")
 def handlerDf(loc):
     # filter
@@ -58,12 +57,12 @@ def handlerDf(loc):
     # }
 
 # Menggunakan Exception
-@app.get("/secret")
-def handlerSecret(password: str = Header(None)):
-    # Kondisi cek api key
-    if password != API_KEY or password == None:
-        raise HTTPException(detail="Password salah!", status_code=401)
+# @app.get("/secret")
+# def handlerSecret(password: str = Header(None)):
+#     # Kondisi cek api key
+#     if password != API_KEY or password == None:
+#         raise HTTPException(detail="Password salah!", status_code=401)
 
-    return{
-        "secret" : "hanya saya dan tuhan yang tahu"
-    }
+#     return{
+#         "secret" : "hanya saya dan tuhan yang tahu"
+#     }
